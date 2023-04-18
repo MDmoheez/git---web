@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+.container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  display: grid;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.form-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(0deg);
+  transition: transform 0.6s ease-in-out;
+}
+
+.sign-in-container {
+  transform: rotateY(180deg);
+}
+
+.form-container.sign-up-container {
+  transform: rotateY(0deg);
+}
+
+.form-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background-color: #ff6b6b;
+  clip-path: polygon(0 0, 100% 0, 50% 100%, 0% 100%);
+}
+
+.form-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  background-color: #1c7cd6;
+  clip-path: polygon(100% 0, 100% 100%, 50% 100%, 50% 100%);
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  align
